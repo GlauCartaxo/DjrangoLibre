@@ -1,10 +1,11 @@
 from DjangoLibre.urls import path
-from categorias.views import CategoriasListView, CategoriasCreateView
+from categorias.views import CategoriasCreateView, CategoriasUpdateView, CategoriasDeleteView
 from categorias.forms import CategoriasCreateForm
 
 app_name = 'categorias'
 
 urlpatterns = [
-    path('categorias', CategoriasListView.as_view(), name='categorias'),
-    path('addcategorias', CategoriasCreateView.as_view, name = 'addcategorias')
+    path('addcategorias', CategoriasCreateView.as_view(), name = 'addcategorias'),
+    path('categorias/<int:pk>/alterar', CategoriasUpdateView.as_view(), name = 'editcategorias'),
+    path('categorias/<int:pk>/deletar', CategoriasDeleteView.as_view(), name = 'delcategorias'),
 ]

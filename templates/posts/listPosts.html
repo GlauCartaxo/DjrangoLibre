@@ -14,6 +14,8 @@
 {% for p in posts %}
     <p>{{p.author}}</p>
     <P>{{p.categorias}}</P>
+    <a href="{% url 'categorias:editcategorias' p.categorias.id%}"> alterar categorias</a>
+    <a href="{% url 'categorias:delcategorias' p.categorias.id%}"> deletar categorias</a>
     <p>{{p.conteudo}} </p>
     <p>{{p.created_at}}</p>
     <a href="{% url 'posts:updateposts' p.id%}"> alterar post</a>
