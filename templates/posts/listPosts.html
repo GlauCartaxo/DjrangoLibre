@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog | Postagens
+{% endblock title %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+
+{% for p in posts %}
+    <p>{{p.author}}</p>
+    <P>{{p.categorias}}</P>
+    <p>{{p.conteudo}} </p>
+    <p>{{p.created_at}}</p>
+    <a href="{% url 'posts:updateposts' p.id%}"> alterar post</a>
+    <a href="{% url 'posts:deleteposts' p.id%}"> deletar post</a>
+    {% empty %}
+    <p>VOCÊ NÃO POSSUI POSTS  :(</p>
+    <a href="{% url 'posts:addposts' %}">Adicione seu primeiro post</a>
+    {% endfor %}
+
+{% endblock body %}

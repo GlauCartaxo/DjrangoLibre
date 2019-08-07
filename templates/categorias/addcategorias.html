@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}
+Blog | Adicionar Postagens
+{% endblock title %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_c}}
+        <input type="submit" value="Adicionar">
+    </form>
+   {% block style %} 
+
+   {% endblock style%}
+{% endblock body %}
+    
+    
+

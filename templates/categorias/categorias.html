@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog | Categorias
+{% endblock title %}
+    
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+    
+    {% for c in categorias %}
+        <p>{{c.nome}}</p>    
+
+    {% endfor %}
+        
+
+
+{% endblock body %}

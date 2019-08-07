@@ -1,0 +1,7 @@
+<form method='post'>
+
+    {% csrf_token %}
+    <p>você tem certeza?</p>
+    {{posts.conteudo}}
+    <input type="submit", value="deletar">
+</form>
