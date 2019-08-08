@@ -1,7 +1,21 @@
-<form method='post'>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 
-    {% csrf_token %}
-    <p>você tem certeza?</p>
-    {{posts.conteudo}}
-    <input type="submit", value="deletar">
+<body> 
+
+<form method='post'>
+    <div>
+        {% csrf_token %}
+        <p>você tem certeza?</p>
+        {{posts.conteudo}}
+    </div>
+    <div class="btn-group btn-group-xs">
+        <button type="button submit" class="btn btn-danger">DELETAR</button>
+    </div>
 </form>
+</body>

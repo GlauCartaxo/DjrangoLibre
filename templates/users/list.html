@@ -11,11 +11,13 @@
 {% endblock scripts %}
 
 {% block body %}
+    <h1 class="bg-info">USUARIOS REGISTRADOS:</h1>
     
 {% for u in users %}
+<div class="card borda">
     <p> {{u.username}} </p>   
     <p> {{u.email}} </p>
-       
+</div>  
 {% endfor %}
-
+    
 {% endblock body %}

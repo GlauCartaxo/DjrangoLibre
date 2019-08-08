@@ -10,11 +10,15 @@ Blog | Adicionar Postagens
 {% endblock scripts %}
 
 {% block body %}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Adicionar">
-    </form>
+<div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+        </div>
+        <div class="btn-group btn-group-xs">
+            <button type="button submit" class="btn btn-success">Adicionar</button>
+        </div>
+        </form>
    {% block style %} 
 
    {% endblock style%}

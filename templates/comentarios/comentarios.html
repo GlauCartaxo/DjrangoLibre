@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog | comentarios
+{% endblock title %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+<h1 class="bg-info">COMENTARIOS:</h1>
+{% for p in comentarios %}
+    <div class="borda card">
+    <div>
+    <p>{{p.posts}}</p>
+    <p>Comentario: {{p.comentarios}}</p>
+    </div>
+    <div class="btn-group btn-group-xs">
+    <a href="{% url 'comentarios:updatecomentarios' p.id %}" class="btn btn-primary">editar comentarios</a>
+    <a href="{% url 'comentarios:deletecomentario' p.id %}" class="btn btn-primary">deletar comentarios</a>
+    </div>
+    {% empty %}
+    <div>
+    <p>VOCÊ NÃO TEM COMENTARIOS</p>
+    </div>
+    <div>
+    <a href="{% url 'comentarios:createcomentario' %}" class="btn btn-primary">Adicione seu primeiro comentario</a>
+    </div>
+    </div>
+    {% endfor %}
+
+{% endblock body %}

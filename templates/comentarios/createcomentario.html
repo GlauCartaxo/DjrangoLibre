@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Blog | Adicionar Postagens
+Blog | Adicionar comentario
 {% endblock title %}
 
 {% block scripts %}
@@ -10,13 +10,13 @@ Blog | Adicionar Postagens
 {% endblock scripts %}
 
 {% block body %}
-   <div>
+    <div>
     <form action="" method="post">
         {% csrf_token %}
         {{form.as_p}}
     </div>
     <div class="btn-group btn-group-xs">
-        <button type="button submit" class="btn btn-success">Adicionar</button>
+        <button type="button submit" class="btn btn-success">Alterar</button>
     </div>
     </form>
    {% block style %} 
@@ -25,4 +25,3 @@ Blog | Adicionar Postagens
 {% endblock body %}
     
     
-

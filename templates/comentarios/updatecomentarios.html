@@ -6,16 +6,15 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method='post'>
-    
-    <div>
-        {% csrf_token %}
-        <p>você tem certeza que deseja deletar?</p>
-        {{categorias.nome}}
-    </div>
-    <div class="btn-group btn-group-xs">
-            <button type="button submit" class="btn btn-danger">DELETAR</button>
-    </div>
+<h3>Modificar comentario</h3>
+<div>
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+</div>   
 
+    <div class="btn-group btn-group-xs">
+        <button type="button submit" class="btn btn-success">Alterar</button>
+    </div>
 </form>
 </body>
