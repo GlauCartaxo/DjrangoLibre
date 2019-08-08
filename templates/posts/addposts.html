@@ -1,19 +1,24 @@
 {% extends 'base.html' %} 
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}
 Blog | Adicionar Postagens
 {% endblock title %}
 
 {% block scripts %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 {% endblock scripts %}
 
 {% block body %}
    <div>
     <form action="" method="post">
         {% csrf_token %}
-        {{form.as_p}}
+       <!--{{form.as_p}}-->
+       <div><p>Autor: {% render_field form.author %}</p></div>
+       <div><p>{% render_field form.conteudo %}</p></div>
+       <div><p>{% render_field form.categorias %}</p></div>
+       
     </div>
     <div class="btn-group btn-group-xs">
         <button type="button submit" class="btn btn-success">Adicionar</button>

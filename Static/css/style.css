@@ -29,9 +29,20 @@
 }
 .borda{
     border: 1px solid black
+    
 }
 
 .card{
     background-color: white;
+    width: 50%;
+    border: 1px solid black;
 
+}
+textarea{
+  background-color: black;
+  color: aliceblue; 
+}
+input{
+    background-color: black;
+    color: aliceblue; 
 }

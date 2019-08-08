@@ -1,6 +1,6 @@
 from users.models import User
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from django.views import generic
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -19,8 +19,16 @@ class UserLoginView(LoginView):
 
 class UserLogoutView(LoginRequiredMixin, LogoutView):
     pass
+
 class SignupCreateView(CreateView):
     model = User
     template_name = "users/signup.html"
     form_class = SignupCreateForm
     success_url = reverse_lazy('users:login_users')
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = "users/detail.html"
+    context_object_name = 'users'
+    
+

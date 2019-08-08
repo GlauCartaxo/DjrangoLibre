@@ -10,34 +10,21 @@
 {% endblock scripts %}
 
 {% block body %}
-<h1 class="bg-info">POSTAGENS:</h1>
-{% for p in posts %}
-    <div class="borda card">
-    <div>
-    <p>{{p.author}}</p>
-    <P>{{p.categorias}}</P>
-    </div>
-    <div class="btn-group btn-group-xs">
-    <a href="{% url 'categorias:editcategorias' p.categorias.id%}"  class="btn btn-primary"> alterar categorias</a>
-    <a href="{% url 'categorias:delcategorias' p.categorias.id%}"  class="btn btn-primary"> deletar categorias</a>
-    </div>
-    <div>
-    <p>{{p.conteudo}} </p>
-    <p>{{p.created_at}}</p>
-    </div>
-    <div class="btn-group btn-group-xs">
-    <a href="{% url 'posts:updateposts' p.id%}"  class="btn btn-primary"> alterar post</a>
-    <a href="{% url 'posts:deleteposts' p.id%}"  class="btn btn-primary"> deletar post</a>
-    </div>
-    {% empty %}
-    <div>
-    <p>VOCÊ NÃO POSSUI POSTS  :(</p>
-    </div>
-    <div>
-    <a href="{% url 'posts:addposts' %}"  class="btn btn-primary">Adicione seu primeiro post</a>
-    </div>
-    </div>
-    {% endfor %}
+    <h1 class="bg-info">POSTAGENS:</h1>
+    <div class="card">
+    {% for p in posts %} 
+        {% include 'includes/cards.html' %}
 
-
+        {% empty %}
+        <div>
+        <p>VOCÊ NÃO POSSUI POSTS  :(</p>
+        </div>
+        <div>
+        <a href="{% url 'posts:addposts' %}"  class="btn btn-primary">Adicione seu primeiro post</a>
+        </div>
+        </div>
+        
+        </div>
+       
+        {% endfor %}
 {% endblock body %}

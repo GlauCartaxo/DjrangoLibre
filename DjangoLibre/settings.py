@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'posts',
     'categorias',
     'comentarios',
+    'widget_tweaks',
 
 ]
 

@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog | Usuários
+{% endblock title %}
+    
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+    <h1 class="bg-info">SEUS DADOS:</h1>
+
+    <div class="card borda">
+    <p> Seu nome é: {{user.username}} </p>      
+    <p> Seu email é: {{user.email}} </p>
+    <p> Conta criada em: {{user.created_at}}</p>
+    <p> Ultimo acesso foi em: {{user.last_login}}</p>
+    <p> Você é administrador: {{user.is_staff }}</p>
+</div>  
+    
+{% endblock body %}

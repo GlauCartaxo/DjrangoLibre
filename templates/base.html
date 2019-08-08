@@ -39,7 +39,7 @@
                           <li><a href="{% url 'users:login_users' %}">Login</a></li>
                           <li><a href="{% url 'users:signup_users' %}">Signup</a></li>
                         {% else %}
-                          <li><a href="">Olá,{{request.user}}</a></li>
+                          <li><a href="{% url 'users:detail_users' request.user.id %}">Olá,{{request.user}}</a></li>
                           <li><a href="{% url 'users:logout_users' %}">Logout</a></li>
                         {% endif %}
                           
