@@ -34,6 +34,15 @@
                         <li><a href="{% url 'categorias:addcategorias' %}">Add Categorias</a></li>
                         <li><a href="{% url 'comentarios:listcomentarios' %}">Comentarios</a></li>
                         <li><a href="{% url 'comentarios:createcomentario' %}">Add Comentario</a></li>
+                        
+                        {% if not request.user.is_authenticated %}
+                          <li><a href="{% url 'users:login_users' %}">Login</a></li>
+                          <li><a href="{% url 'users:signup_users' %}">Signup</a></li>
+                        {% else %}
+                          <li><a href="">Olá,{{request.user}}</a></li>
+                          <li><a href="{% url 'users:logout_users' %}">Logout</a></li>
+                        {% endif %}
+                          
                     </ul>
               
                   </div>

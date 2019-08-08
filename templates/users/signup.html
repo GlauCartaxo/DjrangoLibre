@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}
+Blog | Adicionar Postagens
+{% endblock title %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block body %}
+   <div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+    </div>
+    <div class="btn-group btn-group-xs">
+        <button type="button submit" class="btn btn-success">Signup</button>
+    </div>
+    </form>
+   {% block style %} 
+
+   {% endblock style%}
+{% endblock body %}
+    
+    
