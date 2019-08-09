@@ -11,10 +11,15 @@
     </div>
     <div>
     <p>{{p.conteudo}} </p>
+
+    {% if p.imagem %}
+        <p><img src="{{p.imagem.url}}"> </p>    
+    {% endif %}
+
     <p>{{p.created_at}}</p>
     </div>
     <div class="btn-group btn-group-xs">
     <a href="{% url 'posts:updateposts' p.id%}"  class="btn btn-primary"> alterar post</a>
     <a href="{% url 'posts:deleteposts' p.id%}"  class="btn btn-primary"> deletar post</a>
+    <a href="{% url 'posts:detailposts' p.id%}"  class="btn btn-primary">Ver comentarios</a>
     </div>
-   

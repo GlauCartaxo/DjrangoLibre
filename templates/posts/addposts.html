@@ -12,13 +12,14 @@ Blog | Adicionar Postagens
 
 {% block body %}
    <div>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
        <!--{{form.as_p}}-->
        <div><p>Autor: {% render_field form.author %}</p></div>
        <div><p>{% render_field form.conteudo %}</p></div>
        <div><p>{% render_field form.categorias %}</p></div>
-       
+       <div><p>{% render_field form.imagem %}</p></div>
+
     </div>
     <div class="btn-group btn-group-xs">
         <button type="button submit" class="btn btn-success">Adicionar</button>

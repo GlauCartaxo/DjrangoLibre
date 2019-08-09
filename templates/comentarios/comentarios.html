@@ -11,8 +11,9 @@
 
 {% block body %}
 <h1 class="bg-info">COMENTARIOS:</h1>
+<div class="card">
 {% for p in comentarios %}
-    <div class="borda card">
+    <div class="borda">
     <div>
     <p>{{p.posts}}</p>
     <p>Comentario: {{p.comentarios}}</p>
@@ -30,5 +31,5 @@
     </div>
     </div>
     {% endfor %}
-
+</div>
 {% endblock body %}

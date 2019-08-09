@@ -11,6 +11,20 @@
 {% endblock scripts %}
 
 {% block body %}
+    {% if users.imagemperfil %}
+        <p><img src="{{users.imagemperfil.url}}"> </p>    
+    {% endif %}    
+
+    <h1 class="bg-info">SEUS POSTS:</h1>
+   <div class='card borda'>
+
+
+    {% for u in users.PostsFromUser.all%}
+
+    <p> {{u.conteudo}}</p>
+
+        {% endfor %}
+    </div>
     <h1 class="bg-info">SEUS DADOS:</h1>
 
     <div class="card borda">

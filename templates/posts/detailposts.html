@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog | comentarios
+{% endblock title %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock scripts %}
+
+{% block body %}
+<h1 class="bg-info">COMENTARIOS:</h1>
+<div class="card">
+    <p>{{posts}}</p>
+    {% for p in posts.commentsFromPosts.all%}
+    
+    <p>Comentario: {{p.comentarios}}</p>
+
+        {% endfor %}
+</div>
+{% endblock body %}
